@@ -1,0 +1,61 @@
+/* Simple styles for the portfolio. Change the colors to match your taste. */
+:root {
+  --background: #f7f8fc;
+  --surface: #ffffff;
+  --text: #202332;
+  --muted: #5d6475;
+  --primary: #635bff;
+  --border: #dfe2ec;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: Arial, sans-serif; line-height: 1.6; color: var(--text); background: var(--background); }
+a { color: var(--primary); }
+.container { width: min(1100px, 92%); margin: auto; }
+.site-header { position: sticky; top: 0; z-index: 10; background: var(--surface); border-bottom: 1px solid var(--border); }
+.navbar { display: flex; align-items: center; justify-content: space-between; gap: 20px; min-height: 68px; }
+.logo { color: var(--text); font-size: 1.2rem; font-weight: bold; text-decoration: none; }
+.nav-links { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.nav-links a { text-decoration: none; color: var(--text); }
+.small-button, .button { border: 0; border-radius: 8px; cursor: pointer; font-weight: bold; }
+.small-button { padding: 8px 10px; background: var(--border); color: var(--text); }
+.button { display: inline-block; padding: 11px 18px; background: var(--primary); color: white; text-decoration: none; }
+.hero { display: grid; grid-template-columns: 1fr 280px; align-items: center; gap: 50px; min-height: 520px; }
+h1 { margin: 0 0 15px; font-size: clamp(2.5rem, 7vw, 5rem); line-height: 1.05; }
+h2 { margin-top: 0; font-size: 2rem; }
+.hero-text { max-width: 600px; font-size: 1.2rem; color: var(--muted); margin-bottom: 28px; }
+.eyebrow { color: var(--primary); font-weight: bold; text-transform: uppercase; letter-spacing: .12em; }
+.profile-photo { width: 240px; height: 240px; margin: auto; overflow: hidden; border: 7px solid var(--surface); border-radius: 50%; box-shadow: 0 12px 30px rgba(32, 35, 50, .2); background: #d9d6ff; }
+.profile-photo img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: 62% 68%; }
+.section { padding: 85px 0; }
+.alternate { background: var(--surface); }
+.skill-list { display: flex; flex-wrap: wrap; gap: 12px; }
+.skill-list span { padding: 9px 15px; border: 1px solid var(--border); border-radius: 30px; background: var(--background); }
+.education-card { max-width: 700px; padding: 20px; margin-top: 24px; border-left: 4px solid var(--primary); border-radius: 8px; background: var(--surface); box-shadow: 0 4px 14px rgba(0, 0, 0, .06); }
+.education-card h3 { margin: 0 0 8px; }
+.education-card p { margin: 4px 0; color: var(--muted); }
+.search-box, .chat-form input { width: 100%; padding: 13px; margin: 10px 0 28px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); color: var(--text); font-size: 1rem; }
+.project-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.project-card { padding: 22px; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); }
+.project-card h3 { margin-top: 0; }
+.tags { color: var(--muted); font-size: .9rem; }
+.project-links { display: flex; gap: 15px; }
+.chat-messages { min-height: 120px; padding: 16px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); }
+.bot-message, .user-message { padding: 10px 13px; border-radius: 8px; }
+.bot-message { background: #ecebff; }
+.user-message { background: #e9f7ed; text-align: right; }
+.chat-form { display: flex; gap: 10px; }
+.chat-form input { margin: 10px 0; }
+.footer { padding: 25px; text-align: center; background: #202332; color: white; }
+.hidden { display: none; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); }
+body.dark { --background: #171923; --surface: #232633; --text: #f4f5f7; --muted: #c0c4d0; --border: #3c4152; }
+
+@media (max-width: 700px) {
+  .navbar, .nav-links { justify-content: center; }
+  .hero { grid-template-columns: 1fr; text-align: center; padding: 70px 0; }
+  .project-grid { grid-template-columns: 1fr; }
+  .chat-form { display: block; }
+  .chat-form .button { width: 100%; }
+}
